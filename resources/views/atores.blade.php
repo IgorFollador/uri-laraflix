@@ -6,6 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Ator: {{ $nome }}</h1>
+    <h1>Ator</h1>
+    <ul>
+        @foreach($atores as $ator)
+            <li>{{ $ator->nome }}</li>
+            <li>{{ $ator->dt_nascimento }}</li>
+            <br>
+        @endforeach    
+    </ul>
 </body>
 </html>
