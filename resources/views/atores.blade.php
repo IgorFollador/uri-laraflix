@@ -1,18 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Ator</h1>
-    <ul>
-        @foreach($atores as $ator)
-            <li>{{ $ator->nome }}</li>
-            <li>{{ $ator->dt_nascimento }}</li>
-            <br>
-        @endforeach    
-    </ul>
-</body>
-</html>
+@extends('adminlte::page')
+
+@section('content')
+    @foreach($atores as $ator)
+        <li>{{ $ator->nome }}</li>
+        <li>{{ $ator->dt_nascimento }}</li>
+        <br>
+    @endforeach
+@stop
