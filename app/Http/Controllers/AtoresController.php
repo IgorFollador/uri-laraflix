@@ -9,6 +9,10 @@ class AtoresController extends Controller
 {
     public function index () {
         $atores = Ator::All();
-        return view('atores', ['atores'=>$atores]);
+        return view('atores.index', ['atores'=>$atores]);
+    }
+
+    public function create() {
+        return view('atores.create');
     }
 }
