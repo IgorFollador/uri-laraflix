@@ -10,6 +10,7 @@ Route::get('/', function () {
 
 Route::get('/atores', [AtoresController::class, 'index']);
 Route::get('/atores/create', [AtoresController::class, 'create']);
+Route::post('/atores/store', [AtoresController::class, 'store']);
 
 Auth::routes();
 

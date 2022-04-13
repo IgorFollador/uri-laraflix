@@ -15,4 +15,12 @@ class AtoresController extends Controller
     public function create() {
         return view('atores.create');
     }
+
+    public function store(Request $request){
+        $novo_ator = $request->all();
+        // echo $novo_ator;
+        Ator::create($novo_ator);
+
+        return redirect('atores');
+    }
 }

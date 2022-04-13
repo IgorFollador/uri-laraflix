@@ -9,4 +9,5 @@ class Ator extends Model
 {
     use HasFactory;
     protected $table = "atores";
+    protected $fillable = ['nome', 'nacionalidade', 'dt_nascimento', 'inicio_atividades'];
 }
