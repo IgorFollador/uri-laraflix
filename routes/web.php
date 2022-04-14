@@ -11,6 +11,7 @@ Route::get('/', function () {
 Route::get('/atores', [AtoresController::class, 'index']);
 Route::get('/atores/create', [AtoresController::class, 'create']);
 Route::post('/atores/store', [AtoresController::class, 'store']);
+Route::get('atores/{id}/destroy', [AtoresController::class, 'destroy']);
 
 Auth::routes();
 
