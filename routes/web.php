@@ -10,12 +10,12 @@ Route::get('/', function () {
 
 
 Route::group(['prefix'=>'atores', 'where'=>['id'=>'[0-9]+']], function() {
-    Route::get('',                 ['as'=>'atores',            'uses'=>'\App\Http\Controllers\AtoresController@index'  ]);
-    Route::get('create',           ['as'=>'atores.create',     'uses'=>'\App\Http\Controllers\AtoresController@create' ]);
+    Route::get('',                 ['as'=>'atores',            'uses'=>'\App\Http\Controllers\AtoresController@index']);
+    Route::get('create',           ['as'=>'atores.create',     'uses'=>'\App\Http\Controllers\AtoresController@create']);
     Route::get('{id}/destroy',     ['as'=>'atores.destroy',    'uses'=>'\App\Http\Controllers\AtoresController@destroy']);
-    Route::get('{id}/edit',        ['as'=>'atores.edit',       'uses'=>'\App\Http\Controllers\AtoresController@edit   ']);
-    Route::put('{id}/update',      ['as'=>'atores.update',     'uses'=>'\App\Http\Controllers\AtoresController@update' ]);
-    Route::post('store',           ['as'=>'atores.store',      'uses'=>'\App\Http\Controllers\AtoresController@store'  ]);
+    Route::get('{id}/edit',        ['as'=>'atores.edit',       'uses'=>'\App\Http\Controllers\AtoresController@edit']);
+    Route::put('{id}/update',      ['as'=>'atores.update',     'uses'=>'\App\Http\Controllers\AtoresController@update']);
+    Route::post('store',           ['as'=>'atores.store',      'uses'=>'\App\Http\Controllers\AtoresController@store']);
 });
 
 Auth::routes();
