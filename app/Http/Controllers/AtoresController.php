@@ -19,7 +19,6 @@ class AtoresController extends Controller
 
     public function store(AtorRequest $request){
         $novo_ator = $request->all();
-        // echo $novo_ator;
         Ator::create($novo_ator);
 
         return redirect('atores');
@@ -27,6 +26,16 @@ class AtoresController extends Controller
 
     public function destroy($id) {
         Ator::find($id)->delete();
+        return redirect('atores');
+    }
+
+    public function edit($id) {
+        $ator = Ator::find($id);
+        return view('atores.edit', compact('ator'));
+    }
+
+    public function update(AtorRequest $request, $id) {
+        Ator::find($id)->update($request->all());
         return redirect('atores');
     }
 
