@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Ator;
+use App\Http\Requests\AtorRequest;
 
 class AtoresController extends Controller
 {
@@ -16,11 +17,12 @@ class AtoresController extends Controller
         return view('atores.create');
     }
 
-    public function store(Request $request){
+    public function store(AtorRequest $request){
         $novo_ator = $request->all();
         // echo $novo_ator;
         Ator::create($novo_ator);
 
         return redirect('atores');
     }
+
 }
