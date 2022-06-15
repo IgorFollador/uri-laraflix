@@ -8,8 +8,16 @@ use App\Http\Requests\AtorRequest;
 
 class AtoresController extends Controller
 {
-    public function index () {
-        $atores = Ator::orderBy('nome')->paginate(5);
+    public function index (Request $filtro) {
+        $filtragem = $filtro->get('desc_filtro');
+        if($filtragem == null) {
+            $atores = Ator::orderBy('nome')->paginate(5);
+        } else {
+            $atores = Ator::where('nome', 'like', '%'.$filtragem.'%')
+                            ->orderBy("nome")
+                            ->paginate(10)
+                            ->setpath('atores?desc_filtro='.$filtragem);
+        }
         return view('atores.index', ['atores'=>$atores]);
     }
 
